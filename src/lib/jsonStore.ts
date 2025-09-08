@@ -115,3 +115,14 @@ export async function deleteProject(id: string, ownerId: string) {
     WHERE id = ${id} AND owner_id = ${ownerId}
   `;
 }
+
+export async function ping(): Promise<boolean> {
+  try {
+    // query nhẹ để kiểm tra kết nối (Neon sẽ trả về mảng rows)
+    const rows: any[] = await sql`SELECT 1 AS ok`;
+    return !!rows?.[0]?.ok;
+  } catch (e) {
+    console.error('[jsonStore.ping] failed:', e);
+    return false;
+  }
+}
