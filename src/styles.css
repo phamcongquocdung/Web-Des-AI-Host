@@ -1,0 +1,29 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  html,
+  body,
+  #root {
+    height: 100%;
+    background: #0b0c10;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .page-content {
+    min-height: calc(100vh - 56px);
+  }
+  .page {
+    color: #e7e7ea;
+    padding: 32px;
+  }
+  /* Nền riêng cho trang Dashboard */
+  .page-content[data-route="/dashboard"] {
+    background: #000; /* đen hẳn */
+  }
+
+  /* (tùy chọn) kéo nền sát biên nhìn giống ảnh */
+  .page-content[data-route="/dashboard"] .dash {
+    padding-top: 16px;
+  }
+}

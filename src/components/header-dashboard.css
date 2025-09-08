@@ -1,0 +1,308 @@
+/* ===== Dashboard Header base ===== */
+.hdash {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background: #0a0f17;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #e7e7ea;
+}
+.hdash-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand {
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  background: linear-gradient(90deg, #9ae6ff, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hnav {
+  display: flex;
+  gap: 8px;
+}
+.hlink {
+  background: transparent;
+  border: 0;
+  color: #cfd6e6;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.hlink:hover {
+  background: #0f1623;
+}
+
+.hdash-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* coins + upgrade + icons */
+.coins {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0f1420;
+  border-radius: 999px;
+  font-weight: 800;
+}
+.coin-dot {
+  color: #ffcc33;
+}
+
+.btn-upgrade {
+  background: #2f5aff;
+  color: #fff;
+  border: 0;
+  font-weight: 900;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-upgrade:hover {
+  filter: brightness(1.05);
+}
+
+.icon-round,
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0f1420;
+  color: #fff;
+}
+.icon-round.is-active,
+.avatar.is-active {
+  box-shadow: 0 0 0 3px rgba(79, 127, 255, 0.25);
+}
+
+/* anchor để định vị popover */
+.anchor {
+  position: relative;
+}
+
+/* ===== Popover chung ===== */
+.pop {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  width: 360px;
+  max-height: 70vh;
+  overflow: hidden;
+  background: #0d1119;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 30px 120px rgba(0, 0, 0, 0.45);
+}
+
+/* ===== Notifications pop ===== */
+.pop-notif {
+  display: flex;
+  flex-direction: column;
+}
+.notif-tabs {
+  display: flex;
+  padding: 8px;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.notif-tabs .tab {
+  width: 42px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #10172a;
+  color: #cfe2ff;
+  cursor: pointer;
+  font-size: 16px;
+}
+.notif-tabs .tab.active {
+  background: #1a2440;
+  border-color: #3a59d6;
+  box-shadow: 0 0 0 2px rgba(77, 114, 255, 0.18) inset;
+}
+.notif-body {
+  flex: 1;
+  overflow: auto;
+  padding: 14px;
+}
+.notif-empty {
+  height: 260px;
+  display: grid;
+  place-items: center;
+  color: #b7bfd3;
+  font-weight: 700;
+}
+.notif-footer {
+  padding: 8px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0c111b;
+}
+.soft {
+  background: transparent;
+  border: 0;
+  color: #9db2ff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* ===== User pop ===== */
+.pop-user {
+  padding: 10px;
+}
+
+.user-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 6px 6px;
+  border-radius: 10px;
+  background: #0f1420;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.user-name {
+  font-weight: 900;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.badge-free {
+  margin-left: auto;
+  background: #1d2a10;
+  color: #b5ff76;
+  border: 1px solid #345b13;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.user-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 10px 0;
+}
+.user-menu .row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #0f1420;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #e7e7ea;
+  cursor: pointer;
+}
+.user-menu .row:hover {
+  border-color: #2b3962;
+}
+.user-menu .row .ic {
+  width: 20px;
+  text-align: center;
+}
+.user-menu .row.select {
+  cursor: default;
+}
+.user-menu .row.select select {
+  margin-left: auto;
+  background: #0c1220;
+  color: #e7e7ea;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-weight: 800;
+}
+
+.refer-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0f1420;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 6px 0 10px;
+}
+.refer-title {
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.refer-sub {
+  color: #9aa2b4;
+  font-size: 13px;
+  margin: 4px 0 6px;
+}
+.refer-desc {
+  color: #cfd3dd;
+  font-size: 13px;
+  margin: 0 0 8px;
+}
+.btn-invite {
+  width: 100%;
+  height: 36px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  background: #c3ff5a;
+  color: #05220b;
+  font-weight: 900;
+}
+
+.socials {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+.socials button {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0f1420;
+  color: #fff;
+  cursor: pointer;
+}
+
+.user-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.user-footer .small {
+  font-size: 12px;
+}
+.logout {
+  background: #1a0f12;
+  color: #ff9a9a;
+  border: 1px solid rgba(255, 80, 80, 0.35);
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+/* responsive */
+@media (max-width: 480px) {
+  .pop {
+    width: 320px;
+  }
+}

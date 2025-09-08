@@ -1,0 +1,234 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #0d0d0d;
+  color: #f4d35e;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 60px;
+  background: #121212;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  border-right: 1px solid #222;
+}
+
+.tool-btn {
+  background: none;
+  border: none;
+  color: #f4d35e;
+  font-size: 20px;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #222;
+  background: #1a1a1a;
+}
+
+.canvas-wrapper {
+  flex: 1;
+  background: #0d0d0d;
+}
+
+.inspector {
+  width: 240px;
+  background: #121212;
+  padding: 16px;
+  border-left: 1px solid #222;
+  display: flex;
+  flex-direction: column;
+}
+
+.inspector h3,
+.inspector h4 {
+  margin-top: 0;
+}
+
+.inspector section {
+  margin-bottom: 20px;
+}
+
+.field-group span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+.field-group input {
+  width: 40px;
+  margin-right: 6px;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #f4d35e;
+  text-align: center;
+}
+
+.object-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.object-icons button {
+  background: #1f1f1f;
+  border: 1px solid #333;
+  color: #f4d35e;
+  font-size: 18px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+/* ✅ NEW: Grid for model list in 2 columns */
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  justify-items: center;
+}
+
+.model-card {
+  width: 100px;
+  cursor: grab;
+  text-align: center;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+}
+
+.model-thumb {
+  width: 100%;
+  height: 80px;
+  object-fit: contain;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
+
+.model-label {
+  margin-top: 6px;
+  font-size: 0.8em;
+  color: #222;
+  word-break: break-word;
+}
+.control-button {
+  background-color: black;
+  color: #f4d35e;
+  border: 2px solid #f4d35e;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.control-button:hover {
+  background-color: #1a1a1a;
+}
+
+.tool-pair-container {
+  position: absolute;
+  top: 2px; /* chỉnh cao thấp */
+  right: 10px; /* dịch vào để không che Properties */
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* khoảng cách giữa 2 cặp */
+  z-index: 1000;
+}
+
+.scrollable {
+  scrollbar-width: thin; /* thin / auto / none */
+  scrollbar-color: #ffd700 #2222224c; /* thumb color / track color */
+}
+
+.tool-pair {
+  display: flex;
+  gap: 5px; /* khoảng cách giữa 2 nút trong 1 cặp */
+}
+
+.tool-pair button {
+  width: 55px;
+  height: 45px;
+  background: #0e0e0e69;
+  border: 3px #eeeeee;
+  border-radius: 6px;
+  color: #f4d35e;
+  border: 2px solid #f4d35e;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tool-pair button:hover {
+  background: #222;
+}
+
+.gold-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ffd700;
+  border-radius: 4px;
+  background: #000;
+  box-sizing: border-box; /* giữ kích thước ổn định */
+  display: inline-block;
+  vertical-align: middle; /* cố định baseline */
+  position: relative; /* anchor pseudo */
+}
+
+.gold-checkbox:checked {
+  background: #ffd700;
+  border-color: #ffd700;
+}
+
+/* dấu ✓ không ảnh hưởng layout */
+.gold-checkbox::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 10px;
+  margin-left: -3px;
+  margin-top: -5px;
+  border-right: 2px solid #111;
+  border-bottom: 2px solid #111;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.12s ease;
+}
+.gold-checkbox:checked::after {
+  transform: rotate(45deg) scale(1);
+}
+
+/* Chrome, Edge, Safari, Opera (WebKit/Chromium) */
+.no-spin::-webkit-outer-spin-button,
+.no-spin::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: px;
+}
+
+/* Firefox */
+.no-spin[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield; /* chuẩn hóa */
+}
